@@ -50,6 +50,10 @@ This plot revealed a generally positive relationship between sales and profit. H
 ### Bar Chart (Total Sales by Category)
 The bar chart showed that certain product categories contribute significantly more to overall revenue, helping identify the strongest and weakest sales segments.
 
+### Box Plot (Profit Distribution)
+The box plot highlighted the spread of profit values and identified potential outliers that were examined during preprocessing.
+
+
 ---
 
 ## Data Preprocessing Summary
@@ -104,3 +108,10 @@ A correlation matrix was computed to identify relationships between numerical va
 The `Record_Count` column was excluded from the correlation analysis because it showed no variance, resulting in undefined (NaN) correlation values.
 
 ---
+
+## Challenges Faced and Decisions Made During the Lab
+
+- One of the main challenges encountered during this lab was handling non-standard column names in the dataset. The dataset included a column labeled "记录数," which caused font-rendering warnings and reduced readability in visualizations and correlation heatmaps. To address this, a design decision was made to standardize the schema by renaming the column to Record_Count, improving compatibility with plotting libraries and ensuring consistent feature naming throughout the analysis.
+Starting off, figuring out when to shrink the data proved difficult. Instead of trimming things right away, work began by fixing messy entries, looking into gaps, and then exploring trends. Only after those steps did the process begin to shrink in size. That way, each feature had a chance to show its worth before being removed. Patterns stayed clearer because choices came later, not sooner.
+- Midway through processing, picking how to handle number columns became central. Though Sales and Shipping.Cost stretched much higher than Discount or Quantity, their scale needed adjusting. To evenly align values, Min-Max scaling was used to scale those wider-ranging fields. That shift helped when visually spotting patterns across variables. Meanwhile, only some ongoing measures were split into bins, making group contrasts clearer without distorting the original spread.
+- Plotting took time, so speed mattered. A smaller slice of data helped - picked at random, but still looked like the full set. This sample made visuals quicker to build without changing how things really lined up. Size stayed manageable, yet patterns held true.
